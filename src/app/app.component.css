@@ -1,0 +1,40 @@
+.jumbotron{
+    background-color: #e8a44f;
+    color: #4F0713;
+    height: 80vh;
+    border-radius: 0
+    
+}
+
+.navbar-nav{
+    width: 98vw
+}
+nav{
+    background-color: #4F0713; 
+}
+
+a{
+    color: #e8a44f
+}
+
+h1{
+    margin-left: 40%
+}
+
+
+button{
+    color: #e8a44f;
+    background-color: #4F0713;
+    
+}
+button:focus {
+    outline:0;
+  }
+
+
+button:hover{
+    color: #e8a44f;
+    background-color: #4F0713;
+    border-color: #e8a44f;
+
+}
