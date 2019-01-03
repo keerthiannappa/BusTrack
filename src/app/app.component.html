@@ -1,4 +1,4 @@
-<!--<nav class="navbar navbar-expand" *ngIf="currentUser==null"><h1>KCG TRACK</h1></nav>-->
+<nav class="navbar navbar-expand" *ngIf="currentUser==null"><h1 >KCG TRACK</h1></nav>
 <!--nav bar-->
 <!--<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
 <div class="container">
@@ -9,12 +9,13 @@
       </div>
   </div>    
 -->
-        <nav class="navbar navbar-expand"  >
+        <nav class="navbar navbar-expand"  *ngIf="currentUser">
 
   <div class="navbar-nav" style="margin-top:0%;margin-bottom:0%">
       <button class="btn btn-primary-light nav-item nav-link" routerLink="/">Home</button>
       <button class="btn btn-primary-light nav-item nav-link" routerLink="/buses">Buses</button>
       <button class="btn btn-primary-light nav-item nav-link" routerLink="/change_route">Change Route</button>
+        <h2 style="color:#e8a44f ;margin-left:270px">KCG TRACK</h2>
     </div>
     <div><button class="btn btn-primary-light nav-item nav-link" style="align-content: flex-end" (click)="logout()">Logout</button>
     </div>
