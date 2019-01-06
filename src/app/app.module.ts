@@ -12,6 +12,7 @@ import { User } from './models';
 import { ChangeRouteComponent } from './change-route/change-route.component';
 import {MatChipsModule} from '@angular/material'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthGuard } from './guard';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatChipsModule,
     BrowserAnimationsModule
   ],
-  providers: [AuthenticationService,UserService],
+  providers: [AuthenticationService,UserService,AuthGuard],
   bootstrap: [AppComponent],
   exports:[MatChipsModule]
 })
