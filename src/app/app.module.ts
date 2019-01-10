@@ -13,6 +13,7 @@ import { ChangeRouteComponent } from './change-route/change-route.component';
 import {MatChipsModule} from '@angular/material'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthGuard } from './guard';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -31,7 +32,10 @@ import { AuthGuard } from './guard';
     FormsModule,
     ReactiveFormsModule,
     MatChipsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'YOUR_KEY'
+    })
   ],
   providers: [AuthenticationService,UserService,AuthGuard],
   bootstrap: [AppComponent],

@@ -23,3 +23,6 @@ mat-chip{
 .list-group-item{
 	background-color: #e8a44f
 }
+agm-map {
+	height: 300px;
+  }

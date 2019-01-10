@@ -7,13 +7,12 @@ import {HomeComponent} from "./home/home.component"
 import { ChangeRouteComponent } from './change-route/change-route.component';
 const appRoutes: Routes = [
    { path: '', redirectTo:"home" ,pathMatch:"full"},
-  { path: "home" , component:HomeComponent,canActivate:[AuthGuard] },
+  { path: "home" , component:HomeComponent},
   { path: 'buses', component: BusesComponent,canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'change_route', component: ChangeRouteComponent,canActivate:[AuthGuard]},
   { path: '**', redirectTo: '' }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
