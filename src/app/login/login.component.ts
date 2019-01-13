@@ -47,13 +47,14 @@ export class LoginComponent implements OnInit {
 
         this.loading = true;
         this.authenticationService.login(this.f.username.value, this.f.password.value)
-            .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    console.log("data:"+data);
+                    if(data==true){this.router.navigate([this.returnUrl]);}
+                    else{alert("unable to log in");this.loading = false;}
                 },
                 error => {
-                  console.log('error');
+                  console.log('error'+error);
                   alert("unable to log in")
                     this.loading = false;
                 });

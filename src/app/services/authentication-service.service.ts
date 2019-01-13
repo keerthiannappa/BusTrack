@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { User } from '../models';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -14,7 +15,7 @@ export class AuthenticationService {
     constructor(private http: Http) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
-        this.url="http://localhost:8080";
+        this.url="http://103.249.82.140:9999/kcgtrack";
     }
 
     public get currentUserValue(): User {
@@ -22,15 +23,15 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
-        return this.http.post(this.url+'/users/authenticate', { username, password })
+        return this.http.post(this.url+'/authenticate.php', { username:username, password:password })
             .pipe(map(user => {
-                // login successful if there's a jwt token in the response
-                if (user.json() && user.json().token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(user.json()));
-                    this.currentUserSubject.next(user.json());
+                if (user.json()==true) {
+                    localStorage.setItem('currentUser', JSON.stringify({username:username}));
+                    this.currentUserSubject.next({"id":1,password:"","username":"","firstName":"admin","lastName":"admin","token":"12345"});
+                    return true
                 }
-                return user;
+               else return false;
+               
             }));
     }
 

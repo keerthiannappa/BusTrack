@@ -8,9 +8,9 @@ import { ChangeRouteComponent } from './change-route/change-route.component';
 const appRoutes: Routes = [
    { path: '', redirectTo:"home" ,pathMatch:"full"},
   { path: "home" , component:HomeComponent},
-  { path: 'buses', component: BusesComponent,canActivate:[AuthGuard] },
+  { path: 'buses', component: BusesComponent, },
   { path: 'login', component: LoginComponent },
-  { path: 'change_route', component: ChangeRouteComponent,canActivate:[AuthGuard]},
+  { path: 'change_route', component: ChangeRouteComponent,},
   { path: '**', redirectTo: '' }
 ];
 @NgModule({
