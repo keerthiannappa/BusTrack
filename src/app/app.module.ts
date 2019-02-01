@@ -10,7 +10,7 @@ import { BusesComponent } from './buses/buses.component';
 import { AuthenticationService,UserService} from './services'
 import { User } from './models';
 import { ChangeRouteComponent } from './change-route/change-route.component';
-import {MatChipsModule} from '@angular/material'
+import {MatChipsModule,MatTabsModule} from '@angular/material'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthGuard } from './guard';
 import { AgmCoreModule } from '@agm/core';
@@ -33,6 +33,7 @@ import { AgmCoreModule } from '@agm/core';
     ReactiveFormsModule,
     MatChipsModule,
     BrowserAnimationsModule,
+    MatTabsModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_KEY'
     })

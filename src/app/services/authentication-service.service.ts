@@ -23,7 +23,7 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
-        return this.http.post(this.url+'/authenticate.php', { username:username, password:password })
+        return this.http.post(this.url+'/authenticate.php', JSON.stringify({"username":username, "password":password }))
             .pipe(map(user => {
                 if (user.json()==true) {
                     localStorage.setItem('currentUser', JSON.stringify({username:username}));

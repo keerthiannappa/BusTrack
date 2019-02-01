@@ -2,7 +2,7 @@
   <div class="col-lg-9" style="margin-left:0%;margin-right:0%">
     <nav class="navbar navbar-expand">
       <div>
-        <h2>{{currentRoute}}</h2>
+        <h2>{{currentRoute}} ( {{currentBus.number}} : {{currentBus.device_id}} )</h2>
         <mat-chip-list>
             <mat-chip [disableRipple]="true" >{{currentBus.date}}</mat-chip>
             <mat-chip [disableRipple]="true"> Speed: {{currentBus.speed}} kmph</mat-chip>
@@ -19,7 +19,7 @@
   </div>
   <div class="col-lg-3" >
     <div class="list-group" id="style-2" style="overflow: auto;height:40%" >
-      <a class="list-group-item" *ngFor="let bus of buses" (click)="getSpecific(bus.device_id,bus.route_name)"> 
+      <a class="list-group-item" *ngFor="let bus of buses" (click)="getSpecific(bus.device_id,bus.route_name,bus.bus_no)"> 
       <h5 class="list-group-item-heading">{{bus.route_name}}</h5>
         <h6 class="list-group-item-text">{{bus.bus_no}} ID:{{bus.device_id}}</h6>
       </a>

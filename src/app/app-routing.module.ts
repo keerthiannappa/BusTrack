@@ -7,10 +7,10 @@ import {HomeComponent} from "./home/home.component"
 import { ChangeRouteComponent } from './change-route/change-route.component';
 const appRoutes: Routes = [
    { path: '', redirectTo:"home" ,pathMatch:"full"},
-  { path: "home" , component:HomeComponent},
-  { path: 'buses', component: BusesComponent, },
+  { path: "home" , component:HomeComponent,canActivate:[AuthGuard]},
+  { path: 'buses', component: BusesComponent,canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'change_route', component: ChangeRouteComponent,},
+  { path: 'change_route', component: ChangeRouteComponent,canActivate:[AuthGuard]},
   { path: '**', redirectTo: '' }
 ];
 @NgModule({
