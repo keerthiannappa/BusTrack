@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { User } from '../models';
-import { HttpErrorResponse } from '@angular/common/http';
+import { User } from '../../models'
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -27,7 +25,7 @@ export class AuthenticationService {
             .pipe(map(user => {
                 if (user.json()==true) {
                     localStorage.setItem('currentUser', JSON.stringify({username:username}));
-                    this.currentUserSubject.next({"id":1,password:"","username":"","firstName":"admin","lastName":"admin","token":"12345"});
+                    this.currentUserSubject.next({"id":1,"password":"","username":username,"firstName":"admin","lastName":username,"token":"12345"});
                     return true
                 }
                else return false;

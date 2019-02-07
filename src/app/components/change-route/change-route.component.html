@@ -1,0 +1,73 @@
+<div class="row" style="height:95vh">
+  <div class="col-lg-3">
+    
+      <div class="title1"><h4>CURRENT BUS ROUTES</h4></div>
+ 
+    <div id="style-2" style="overflow: auto;height:70%">
+      <table
+        class="table table-hover table-borderless table-sm"
+        style="border-block-end-color: #4F0713;"
+      >
+        <thead style="background-color:#4F0713;color:#e8a44f">
+          <tr>
+            <th>Bus No</th>
+            <th>Route</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bus of buses">
+            <td>{{ bus.bus_no }}</td>
+            <td>{{ bus.route_name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-lg-9">
+    <div class="change-route-container">
+      <div style="padding: 100px">
+        <form [formGroup]="changeRouteForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="bus_no">Bus</label>
+            <select 
+              class="form-control"
+              formControlName="bus_no"
+              style="width:300px"
+              [ngClass]="{'is-invalid': submitted && f.bus_no.errors}">
+              <option  disabled selected value="">Please select a Bus</option>
+              <option *ngFor='let bus of buses'>{{ bus.bus_no }}({{bus.route_name}})</option>
+            </select>
+            <div *ngIf="submitted && f.bus_no.errors" class="invalid-feedback">
+              <div *ngIf="f.bus_no.errors.required">Bus Number is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bus_no">Route Name</label>
+            <select 
+              class="form-control"
+              formControlName="route_name"
+              style="width:300px"
+              [ngClass]="{'is-invalid': submitted && f.route_name.errors}">
+              <option  disabled selected value="">Please select a Route</option>
+              <option *ngFor='let bus of buses'>{{bus.route_name}}</option>
+            </select>
+            <div *ngIf="submitted && f.route_name.errors" class="invalid-feedback">
+              <div *ngIf="f.route_name.errors.required">Route Name is required</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary-light">Update</button>
+        </form>
+      </div>
+    </div>
+    <!-- <mat-tab-group [disableRipple]="true" mat-align-tabs="left">
+      <mat-tab label="Assign Bus to Route">
+          <app-bus-to-route></app-bus-to-route>
+      </mat-tab>
+      <mat-tab label="Assign Route to Bus">
+          <app-route-to-bus></app-route-to-bus>
+      </mat-tab>
+    </mat-tab-group> -->
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <div class="row" style="height:95vh">
   <div class="col-lg-8" style="overflow: auto;height:80%" id="style-2" >
     <table
-      class="table table-hover table-borderless"
+      class="table table-hover table-borderless table-sm"
       style="border-block-end-color: #4F0713;"
     >
       <thead style="background-color:#4F0713;color:#e8a44f">
@@ -30,7 +30,7 @@
    
       <div class="list-group" id="style-2" style="overflow: auto;height:75%">
         <a class="list-group-item" *ngFor="let stop of stops">
-        <h5 class="list-group-item-heading">{{stop.name}}</h5>
+        {{stop.name}}
         </a>
      
     </div>

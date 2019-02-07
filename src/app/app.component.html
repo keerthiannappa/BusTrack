@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand" *ngIf="currentUser==null"><h1 >KCG TRACK</h1></nav>
+<nav class="navbar navbar-expand" *ngIf="currentUser == null">
+  <h1>KCG TRACK</h1>
+</nav>
 <!--nav bar-->
 <!--<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
 <div class="container">
@@ -9,16 +11,42 @@
       </div>
   </div>    
 -->
-        <nav class="navbar navbar-expand"  *ngIf="currentUser">
-
+<nav class="navbar navbar-expand" *ngIf="currentUser">
   <div class="navbar-nav" style="margin-top:0%;margin-bottom:0%">
-      <button class="btn btn-primary-light nav-item nav-link" routerLink="/">Home</button>
-      <button class="btn btn-primary-light nav-item nav-link" routerLink="/buses">Buses</button>
-      <button class="btn btn-primary-light nav-item nav-link" routerLink="/change_route">Change Route</button>
-        <h2 style="color:#e8a44f ;margin-left:270px">KCG TRACK</h2>
-    </div>
-    <div><button class="btn btn-primary-light nav-item nav-link" style="align-content: flex-end" (click)="logout()">Logout</button>
-    </div>
+    <button class="btn btn-primary-light nav-item nav-link" routerLink="/">
+      <mat-icon style="vertical-align:bottom">home</mat-icon>
+      <span style="text-align:center;">Home </span></button
+    ><span> </span>
+    <button class="btn btn-primary-light nav-item nav-link" routerLink="/buses">
+      <mat-icon style="vertical-align:bottom">directions_bus</mat-icon>
+      <span style="text-align:center;">Buses </span></button
+    ><span> </span>
+    <button
+      class="btn btn-primary-light nav-item nav-link"
+      routerLink="/change_route"
+    >
+      <mat-icon style="vertical-align:bottom">call_split</mat-icon>
+      <span style="text-align:center;">Change Route </span></button
+    ><span> </span>
+    <h2 style="color:#e8a44f ;margin-left:250px">KCG TRACK</h2>
+  </div>
+  <button
+    class="btn btn-primary-light nav-item nav-link"
+    routerLink="/feedback"
+  >
+    <span style="text-align:center;">Feedbacks </span>
+    <mat-icon style="vertical-align:bottom">question_answer</mat-icon>
+  </button>
+  <div>
+    <button
+      class="btn btn-primary-light nav-item nav-link"
+      style="align-content: flex-end;"
+      (click)="logout()"
+    >
+      <span style="text-align:center;">Logout </span>
+      <mat-icon style="vertical-align:bottom">exit_to_app</mat-icon>
+    </button>
+  </div>
 </nav>
 
 <!--container-->
@@ -27,10 +55,16 @@
 </div>
 
 <!--infobar-->
-<nav class="navbar navbar-expand" style="height:70px;color:#e8a44f" >
-
-        <div class="navbar-nav" style="width:83%">
-        KCG TRACK
-        </div>
-        <div>KCG College Of Technology</div>
-      </nav>
+<nav class="navbar navbar-expand" style="height:70px;color:#e8a44f">
+  <div class="navbar-nav" style="width:73%">
+    <button
+    class="btn btn-primary-light nav-item nav-link app"
+    style="border-color:#e8a44f"
+    routerLink="/download"
+  >
+    <span style="text-align:center;">Mobile App </span>
+    <mat-icon style="vertical-align:bottom">stay_primary_portrait</mat-icon>
+  </button>
+  </div>
+  <div>Department of CSE | KCG College Of Technology</div>
+</nav>

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { BusService } from "../services/bus.service";
+import { BusService } from "../../services";
 
 
 @Component({

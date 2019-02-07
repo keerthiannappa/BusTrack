@@ -4,16 +4,17 @@ import {HttpModule} from '@angular/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { BusesComponent } from './buses/buses.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { BusesComponent } from './components/buses/buses.component';
 import { AuthenticationService,UserService} from './services'
-import { User } from './models';
-import { ChangeRouteComponent } from './change-route/change-route.component';
-import {MatChipsModule,MatTabsModule} from '@angular/material'
+import { ChangeRouteComponent } from './components/change-route/change-route.component';
+import {MatChipsModule,MatTabsModule,MatIconModule} from '@angular/material'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthGuard } from './guard';
 import { AgmCoreModule } from '@agm/core';
+import { MobileAppComponent } from './components/mobile-app/mobile-app.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 
 @NgModule({
@@ -23,6 +24,8 @@ import { AgmCoreModule } from '@agm/core';
     LoginComponent,
     BusesComponent,
     ChangeRouteComponent,
+    MobileAppComponent,
+    FeedbackComponent,
   
   ],
   imports: [
@@ -32,6 +35,7 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     ReactiveFormsModule,
     MatChipsModule,
+    MatIconModule,
     BrowserAnimationsModule,
     MatTabsModule,
     AgmCoreModule.forRoot({
