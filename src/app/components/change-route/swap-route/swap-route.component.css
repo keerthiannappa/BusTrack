@@ -1,0 +1,17 @@
+.change-route-container {
+  background-color: #4f0713;
+  height: 70vh;
+}
+
+.test {
+  background: #e8a44f;
+  color: #4f0713;
+}
+.mat-simple-snackbar-action {
+  color: black !important;
+}
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+}

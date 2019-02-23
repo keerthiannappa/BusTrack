@@ -32,6 +32,9 @@ th {
 }
 .mat-tab-label {
   color: #4f0713;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
 }
 .mat-tab-label.mat-tab-label-active {
   color: #e8a44f;
@@ -41,11 +44,7 @@ th {
 .mat-ink-bar {
   display: none;
 }
-.change-route-container {
-  background-color: #4f0713;
-  height: 70vh;
-  margin-top: 5vh;
-}
+
 button {
   color: #4f0713;
   background-color: #e8a44f;

@@ -9,12 +9,14 @@ import { LoginComponent } from './components/login/login.component';
 import { BusesComponent } from './components/buses/buses.component';
 import { AuthenticationService,UserService} from './services'
 import { ChangeRouteComponent } from './components/change-route/change-route.component';
-import {MatChipsModule,MatTabsModule,MatIconModule} from '@angular/material'
+import {MatChipsModule,MatTabsModule,MatIconModule,MatSnackBarModule} from '@angular/material'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthGuard } from './guard';
 import { AgmCoreModule } from '@agm/core';
 import { MobileAppComponent } from './components/mobile-app/mobile-app.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { SwapRouteComponent } from './components/change-route/swap-route/swap-route.component';
+import { MergeRouteComponent } from './components/change-route/merge-route/merge-route.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     ChangeRouteComponent,
     MobileAppComponent,
     FeedbackComponent,
+    SwapRouteComponent,
+    MergeRouteComponent,
   
   ],
   imports: [
@@ -38,6 +42,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     MatIconModule,
     BrowserAnimationsModule,
     MatTabsModule,
+    MatSnackBarModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_KEY'
     })
