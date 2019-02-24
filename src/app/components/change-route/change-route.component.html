@@ -1,29 +1,39 @@
+<!-- grid layout -->
 <div class="row" style="height:95vh">
+  <!-- column 1 -->
   <div class="col-lg-3">
+    <!-- heading -->
     <div class="title1"><h4>CURRENT BUS ROUTES</h4></div>
-
+    <!-- table -->
     <div id="style-2" style="overflow: auto;height:70%">
       <table
         class="table table-hover table-borderless table-sm"
         style="border-block-end-color: #4F0713;"
       >
+      <!-- table : head -->
         <thead style="background-color:#4F0713;color:#e8a44f">
           <tr>
             <th>Bus No</th>
             <th>Route</th>
           </tr>
         </thead>
+        <!-- end : table : head -->
+        <!-- table : body -->
         <tbody>
           <tr *ngFor="let bus of buses">
             <td>{{ bus.bus_no }}</td>
             <td>{{ bus.route_name }}</td>
           </tr>
         </tbody>
+        <!-- end : table : body  -->
       </table>
     </div>
+    <!-- end : table -->
   </div>
+  <!-- end : column 1 -->
+  <!-- column 2 -->
   <div class="col-lg-9">
-    <mat-tab-group [disableRipple]="true" mat-align-tabs="left" >
+    <mat-tab-group [disableRipple]="true" mat-align-tabs="left">
       <mat-tab label="Swap Routes">
         <app-swap-route></app-swap-route>
       </mat-tab>

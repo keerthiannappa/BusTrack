@@ -6,20 +6,22 @@ import { map } from 'rxjs/operators';
 })
 export class BusService {
 
+  url="http://103.249.82.140:9999/kcgtrack";
+
   constructor(private http:Http) { }
 
   getAll(){
-    return this.http.get("http://103.249.82.140:9999/kcgtrack/getallbus.php").pipe(map(res=>{
+    return this.http.get(this.url+"/getallbus.php").pipe(map(res=>{
       return res.json();
     }))
   }
   getSpecific(id){
-    return this.http.get("http://103.249.82.140:9999/kcgtrack/getspecific.php?id="+id).pipe(map(res=>{
+    return this.http.get(this.url+"/getspecific.php?id="+id).pipe(map(res=>{
       return res.json();
     }))
   }
   getStops(id){
-    return this.http.get("http://103.249.82.140:9999/kcgtrack/getstops.php?id="+id).pipe(map(res=>{
+    return this.http.get(this.url+"/getstops.php?id="+id).pipe(map(res=>{
       return res.json();
     }))
   }

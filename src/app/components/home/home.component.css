@@ -20,6 +20,10 @@ mat-chip{
 	background-color: #4F0713;
 	color: #e8a44f
 }
+.mat-chip.mat-standard-chip {
+    background-color: #4F0713;
+    color: #e8a44f;
+}
 .list-group-item{
 	background-color: #e8a44f;
 	color: #4F0713

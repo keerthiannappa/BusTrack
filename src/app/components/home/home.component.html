@@ -4,7 +4,7 @@
       <div>
         <h2>{{currentRoute}} ( {{currentBus.number}} : {{currentBus.device_id}} )</h2>
         <mat-chip-list>
-            <mat-chip [disableRipple]="true" >{{currentBus.date}}</mat-chip>
+            <mat-chip [disableRipple]="true" class="mat-chip-custom" >{{currentBus.date}}</mat-chip>
             <mat-chip [disableRipple]="true"> Speed: {{currentBus.speed}} kmph</mat-chip>
             <mat-chip [disableRipple]="true"> Start Trip: {{currentBus.start_time}}</mat-chip>
             <mat-chip [disableRipple]="true">End Trip: {{currentBus.end_time}}</mat-chip>

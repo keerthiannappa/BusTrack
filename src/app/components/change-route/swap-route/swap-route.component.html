@@ -1,27 +1,33 @@
+<!-- container -->
 <div class="change-route-container">
+  <!-- gridlayout -->
   <div class="row no-gutters">
+    <!-- column 1 -->
     <div class="col-5">
       <div style="padding: 50px">
-        <form [formGroup]="swapRouteForm" (ngSubmit)="onSubmit()">
+        <!-- form : swapRouteForm -->
+        <form [formGroup]="swapRouteForm" #formDirective="ngForm" (ngSubmit)="onSubmit()">
+          <!-- select bus no -->
           <div class="form-group">
             <label for="bus_no">Bus</label>
             <select
-              class="form-control"
+              class="custom-select"
               formControlName="bus_no"
               style="width:300px"
               [ngClass]="{ 'is-invalid': submitted && f.bus_no.errors }"
               (change)="onChange('bus')"
             >
               <option disabled selected value="">Please select a Bus</option>
-              <option *ngFor="let bus of buses"
-                >{{ bus.bus_no }}</option
+              <option *ngFor="let bus of buses" [value]="bus.device_id"
+                >{{ bus.bus_no }}({{ bus.route_name }})</option
               >
             </select>
             <div *ngIf="submitted && f.bus_no.errors" class="invalid-feedback">
               <div *ngIf="f.bus_no.errors.required">Bus Number is required</div>
             </div>
           </div>
-
+          <!-- end : select bus no -->
+          <!-- select route name -->
           <div class="form-group">
             <label for="route_name">Route Name</label>
             <select
@@ -32,7 +38,9 @@
               (change)="onChange('route')"
             >
               <option disabled selected value="">Please select a Route</option>
-              <option *ngFor="let bus of buses">{{ bus.route_name }}</option>
+              <option *ngFor="let bus of buses" [value]="bus.route_id">{{
+                bus.route_name
+              }}</option>
             </select>
             <div
               *ngIf="submitted && f.route_name.errors"
@@ -43,7 +51,8 @@
               </div>
             </div>
           </div>
-
+          <!-- end : select route name -->
+          <!-- update button -->
           <button
             type="submit"
             [disabled]="!swapRouteForm.valid"
@@ -51,27 +60,46 @@
           >
             Update
           </button>
+          <!-- end : update button -->
         </form>
+        <!-- end : form : swapRouteForm -->
       </div>
     </div>
-
-    <div class="col-1" *ngIf="swapRouteForm.valid" style="padding-top: 120px;padding-left: 20px">
-      <mat-icon style="color:#e8a44f;height:50px;width:50px;font-size: 50px ">swap_horiz</mat-icon>
+    <!-- end : column 1 -->
+    <!-- column 2 : swap icon -->
+    <div
+      class="col-1"
+      *ngIf="swapRouteForm.valid"
+      style="padding-top: 120px;padding-left: 20px"
+    >
+      <mat-icon style="color:#e8a44f;height:50px;width:50px;font-size: 50px"
+        >swap_horiz</mat-icon
+      >
     </div>
-
+    <!-- end : column 2 -->
+    <!-- column 3 -->
     <div class="col-5" *ngIf="swapRouteForm.valid">
-        <div style="padding: 50px">
-            <form [formGroup]="swapForm">
-              <div class="form-group">
-                <label for="bus_no">Bus</label>
-                <input class="form-control" disabled  formControlName="bus_no">
-              </div>
-              <div class="form-group">
-                  <label for="route_name">Route Name</label>
-                  <input class="form-control" disabled  formControlName="route_name">
-                </div>
-            </form>
+      <div style="padding: 50px">
+        <!-- form : swapForm -->
+        <form [formGroup]="swapForm">
+          <!-- disabled input bus no -->
+          <div class="form-group">
+            <label for="bus_no">Bus</label>
+            <input class="form-control" disabled formControlName="bus_no" />
           </div>
+          <!-- end : disabled input bus no -->
+          <!-- disabled input route name -->
+          <div class="form-group">
+            <label for="route_name">Route Name</label>
+            <input class="form-control" disabled formControlName="route_name" />
+          </div>
+          <!-- end : disabled input route name -->
+        </form>
+        <!-- end : from : swapForm -->
+      </div>
     </div>
+    <!-- end : column 3 -->
   </div>
+  <!-- end : gridlayout -->
 </div>
+<!-- end : container -->
