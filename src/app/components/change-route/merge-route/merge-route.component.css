@@ -2,3 +2,11 @@
     background-color: #4f0713;
     height: 70vh;
   }
+  .mat-simple-snackbar-action {
+    color: black !important;
+  }
+  
+.test {
+  background: #e8a44f;
+  color: #4f0713;
+}

@@ -1,2 +1,66 @@
+<!-- container -->
 <div class="change-route-container">
-</div>
+        <div style="padding: 50px">
+          <!-- form : swapRouteForm -->
+          <form [formGroup]="mergeRouteForm" #formDirective="ngForm" (ngSubmit)="onSubmit()">
+           
+            <!-- select bus no -->
+            <div class="form-group">
+              <label for="bus_no">Bus</label><br>
+              <select
+                class="custom-select"
+                formControlName="bus_no"
+                style="width:300px"
+                [ngClass]="{ 'is-invalid': submitted && f.bus_no.errors }"
+                (change)="onChange('bus')"
+              >
+                <option disabled selected value="">Please select a Bus</option>
+                <option *ngFor="let bus of buses" [value]="bus.device_id"
+                  >{{ bus.bus_no }}({{ bus.route_name }})</option
+                >
+              </select>
+              <div *ngIf="submitted && f.bus_no.errors" class="invalid-feedback">
+                <div *ngIf="f.bus_no.errors.required">Bus Number is required</div>
+              </div>
+            </div>
+            <!-- end : select bus no -->
+            <!-- select route name -->
+            <div class="form-group">
+              <label for="route_name">Route Name to be Merged</label><br>
+              <select
+                class="custom-select"
+                formControlName="route_name"
+                style="width:300px"
+                [ngClass]="{ 'is-invalid': submitted && f.route_name.errors }"
+                (change)="onChange('route')"
+              >
+                <option disabled selected value="">Please select a Route</option>
+                <option *ngFor="let bus of buses" [value]="bus.route_id">{{
+                  bus.route_name
+                }}</option>
+              </select>
+              <div
+                *ngIf="submitted && f.route_name.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.route_name.errors.required">
+                  Route Name is required
+                </div>
+              </div>
+            </div>
+            <!-- end : select route name -->
+            <!-- update button -->
+            <button
+              type="submit"
+              [disabled]="!mergeRouteForm.valid"
+              class="btn btn-primary-light"
+            >
+              Merge
+            </button>
+            <!-- end : merge button -->
+          </form>
+          <!-- end : form : mergeRouteForm -->
+        </div>
+  </div>
+  <!-- end : container -->
+  
